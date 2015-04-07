@@ -4,3 +4,5 @@ include ':Database'
 include ':JsonGenerator'
 include ':XmlParser'
 
+include 'JsonParser'
+

@@ -15,17 +15,18 @@ public class Generator {
 
     public static void main(String[] args) {
 
-        if(args.length!=1){
-            System.err.println("No file given");
+        if(args.length!=2){
+            System.err.println("No file and path given");
             System.exit(-1);
         }
         System.out.println(args[0]);
+        System.out.println(args[1]);
 
         try {
             PrediccionSemana p = Retriever.ultimaPrediccion();
             if(p!=null){
                 System.out.println("Data successfully retrieved from database.");
-                writeToFile(p, args[0]);
+                writeToFile(p, args[0], args[1]);
             }else{
                 System.out.println("Data retrieval went wrong.");
             }
@@ -34,11 +35,11 @@ public class Generator {
         }
     }
 
-    private static void writeToFile(PrediccionSemana p, String filename){
+    private static void writeToFile(PrediccionSemana p, String filename, String path){
         Gson gson = new Gson();
         String s = gson.toJson(p);
 
-        File json = new File(filename);
+        File json = new File(path,filename);
         FileOutputStream outputStream;
 
         try {
