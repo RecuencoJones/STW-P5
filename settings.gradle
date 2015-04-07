@@ -3,6 +3,5 @@ rootProject.name = 'Main'
 include ':Database'
 include ':JsonGenerator'
 include ':XmlParser'
-
-include 'JsonParser'
+include ':JsonParser'
 

@@ -1,6 +1,6 @@
 # Execution order
 
-- Execute mysql schema script from module [Database](PrediccionParser/src/main/resources/stw-prediccion.sql)
-- Run jar at [XmlParser](XmlParser)
-- Run jar at [JsonGenerator](JsonGenerator)
-- Start server at [JsonParser](JsonParser)
+- Execute mysql schema script from module [Database](Database/src/main/resources/stw-prediccion.sql)
+- Run `java -jar XmlParser.jar <url>`
+- Run `java -jar JsonGenerator.jar <filename> <path>`
+- Run `java -jar JsonParser.jar <url> <path>`
